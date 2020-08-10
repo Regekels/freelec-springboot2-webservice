@@ -1,0 +1,30 @@
+buildscript {
+    ext { // 전역변수 설정
+        springBootVersion = '2.1.7.RELEASE' // 전역변수 값 할당
+    }
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management' // 스프링 부트의 dependency 관리해주는 플러그인
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+ repositories {     // dependency 라이브러리를 어디서 받는지 결정
+    mavenCentral()  // 많은 과정과 설정이 필요하다
+     jcenter()      // 라이브러리 업로드가 간단
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
