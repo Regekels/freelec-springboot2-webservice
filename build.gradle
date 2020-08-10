@@ -1,6 +1,6 @@
 buildscript {
     ext { // 전역변수 설정
-        springBootVersion = '2.1.7.RELEASE' // 전역변수 값 할당
+        springBootVersion = '2.1.7.RELEASE' as Object // 전역변수 값 할당
     }
     repositories {
         mavenCentral()
